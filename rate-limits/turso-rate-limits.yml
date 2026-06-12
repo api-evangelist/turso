@@ -1,0 +1,88 @@
+---
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Turso
+providerId: turso
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - Rate Limiting
+  - Database
+  - Edge Computing
+description: Turso enforces monthly row-read, row-write, and storage quotas per plan tier rather than per-second rate limits; the HTTP API returns 429 on plan-level quota exhaustion, and individual database connections idle-timeout after 10 seconds with a 5-second transaction window.
+sources:
+  - https://docs.turso.tech/sdk/http/reference
+  - https://turso.tech/pricing
+headers:
+  retryAfter: Retry-After
+responseCodes:
+  throttled: 429
+limits:
+  - name: Platform API Authentication
+    scope: key
+    metric: bearer_token
+    limit: -1
+    timeFrame: minute
+    notes: Bearer token required in Authorization header for all Platform API calls; plan-level quotas enforced rather than per-minute API rate limits.
+  - name: HTTP Database API - Connection Idle Timeout
+    scope: user
+    metric: idle_seconds
+    limit: 10
+    timeFrame: usage
+    notes: Individual database connections are left open until 10 seconds of idle time, then closed automatically.
+  - name: HTTP Database API - Transaction Window
+    scope: user
+    metric: transaction_seconds
+    limit: 5
+    timeFrame: usage
+    notes: Transactions must complete within 5 seconds or they are rolled back.
+  - name: Free Plan - Monthly Rows Read
+    scope: org
+    metric: rows_read_per_month
+    limit: 500000000
+    timeFrame: month
+    notes: Free plan includes 500M rows read per month; overages charged at $1/billion rows.
+  - name: Free Plan - Monthly Rows Written
+    scope: org
+    metric: rows_written_per_month
+    limit: 10000000
+    timeFrame: month
+    notes: Free plan includes 10M rows written per month; overages charged at $1/million rows.
+  - name: Developer Plan - Monthly Rows Read
+    scope: org
+    metric: rows_read_per_month
+    limit: 2500000000
+    timeFrame: month
+    notes: Developer plan includes 2.5B rows read per month.
+  - name: Developer Plan - Monthly Rows Written
+    scope: org
+    metric: rows_written_per_month
+    limit: 25000000
+    timeFrame: month
+    notes: Developer plan includes 25M rows written per month.
+  - name: Scaler Plan - Monthly Rows Read
+    scope: org
+    metric: rows_read_per_month
+    limit: 100000000000
+    timeFrame: month
+    notes: Scaler plan includes 100B rows read per month; overages at $0.80/billion rows.
+  - name: Scaler Plan - Monthly Rows Written
+    scope: org
+    metric: rows_written_per_month
+    limit: 100000000
+    timeFrame: month
+    notes: Scaler plan includes 100M rows written per month; overages at $0.80/million rows.
+  - name: Pro Plan - Monthly Rows Read
+    scope: org
+    metric: rows_read_per_month
+    limit: 250000000000
+    timeFrame: month
+    notes: Pro plan includes 250B rows read per month; overages at $0.75/billion rows.
+  - name: Pro Plan - Monthly Rows Written
+    scope: org
+    metric: rows_written_per_month
+    limit: 250000000
+    timeFrame: month
+    notes: Pro plan includes 250M rows written per month; overages at $0.75/million rows.

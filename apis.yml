@@ -1,0 +1,115 @@
+---
+aid: turso
+name: Turso
+description: >-
+  Turso is an edge database platform built on libSQL, a fork of SQLite, offering
+  both an embedded in-process database engine and a managed cloud service (Turso
+  Cloud) for deploying millions of SQLite databases at the edge. Developers can
+  programmatically manage databases, groups, organizations, and authentication
+  tokens via the Turso Platform API, and execute SQL queries directly over HTTP
+  using the libSQL HTTP API. Turso targets multi-tenant SaaS, AI agent
+  architectures, and edge/serverless workloads where per-user or per-agent
+  database isolation is required. The platform provides official SDKs for
+  TypeScript, Go, Python, and mobile (iOS/Android), a CLI tool, and an MCP
+  server integration for AI assistant access.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - Database
+  - Edge Computing
+  - SQLite
+  - Developer Tools
+  - Multi-tenant
+  - AI Agents
+url: https://raw.githubusercontent.com/api-evangelist/turso/refs/heads/main/apis.yml
+created: '2026-06-12'
+modified: '2026-06-12'
+specificationVersion: '0.19'
+apis:
+  - aid: turso:platform-api
+    name: Turso Platform API
+    description: >-
+      RESTful management API for programmatically creating and managing Turso
+      Cloud databases, groups, organizations, locations, and scoped
+      authentication tokens. Used for building multi-tenant architectures,
+      automating database provisioning on user signup or agent creation, and
+      managing the full lifecycle of libSQL databases in the cloud.
+    humanURL: https://docs.turso.tech/api-reference/introduction
+    baseURL: https://api.turso.tech
+    tags:
+      - Database Management
+      - Organizations
+      - Tokens
+      - Groups
+    properties:
+      - type: Documentation
+        url: https://docs.turso.tech/api-reference/introduction
+  - aid: turso:http-database-api
+    name: Turso SQL over HTTP API
+    description: >-
+      HTTP API for executing SQL statements directly against a Turso database
+      instance at the edge. Supports query execution via the /v2/pipeline
+      endpoint, health checks, server version retrieval, database dump export,
+      schema migration job monitoring, and real-time table change listening
+      (technical preview). Designed for edge and serverless environments where
+      WebSocket connections are unavailable.
+    humanURL: https://docs.turso.tech/sdk/http/reference
+    baseURL: https://{databaseName}-{organizationSlug}.turso.io
+    tags:
+      - SQL
+      - HTTP
+      - Edge
+      - Serverless
+    properties:
+      - type: Documentation
+        url: https://docs.turso.tech/sdk/http/reference
+      - type: Documentation
+        url: https://docs.turso.tech/sdk/http/quickstart
+  - aid: turso:agentfs-mcp
+    name: Turso AgentFS MCP Server
+    description: >-
+      Model Context Protocol (MCP) server that exposes Turso databases, filesystem
+      operations, and key-value storage to AI assistants such as Claude Desktop,
+      Cursor, and Windsurf. Enables AI agents to discover optimal regions,
+      monitor real-time table changes, and access structured database operations
+      in a secure, tool-limited fashion.
+    humanURL: https://docs.turso.tech/agentfs/guides/mcp
+    tags:
+      - MCP
+      - AI Agents
+      - Model Context Protocol
+    properties:
+      - type: Documentation
+        url: https://docs.turso.tech/agentfs/guides/mcp
+      - type: GitHubRepository
+        url: https://github.com/tursodatabase/agentfs
+common:
+  - type: Website
+    url: https://turso.tech
+  - type: Documentation
+    url: https://docs.turso.tech
+  - type: GitHubOrganization
+    url: https://github.com/tursodatabase
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/turso
+  - type: X
+    url: https://x.com/tursodatabase
+  - type: Blog
+    url: https://turso.tech/blog
+  - type: Pricing
+    url: https://turso.tech/pricing
+  - type: StatusPage
+    url: https://status.turso.tech
+  - type: SDKs
+    url: https://docs.turso.tech/sdk/introduction
+  - type: CLI
+    url: https://github.com/tursodatabase/turso-cli
+  - type: Plans
+    url: plans/turso-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/turso-rate-limits.yml
+  - type: FinOps
+    url: finops/turso-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

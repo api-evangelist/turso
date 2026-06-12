@@ -1,0 +1,423 @@
+---
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Turso
+providerId: turso
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - Database
+  - Edge Computing
+  - SQLite
+  - Developer Tools
+description: Turso offers a free tier and three paid tiers scaled by databases, storage, and row operations, plus enterprise custom plans.
+sources:
+  - https://turso.tech/pricing
+plans:
+  - id: turso-free
+    name: Free
+    type: free
+    description: Free tier for prototyping and small projects with 100 databases and 5GB storage.
+    entries:
+      - label: Databases
+        name: databases
+        type: quota
+        metric: databases
+        limit: 100
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage
+        name: storage_gb
+        type: quota
+        metric: GB
+        limit: 5
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage Overage
+        name: storage_overage
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.75'
+        userMultiplied: false
+      - label: Monthly Rows Read
+        name: rows_read
+        type: quota
+        metric: rows
+        limit: 500000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Rows Read Overage
+        name: rows_read_overage
+        type: metered
+        metric: billion rows
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '1.00'
+        userMultiplied: false
+      - label: Monthly Rows Written
+        name: rows_written
+        type: quota
+        metric: rows
+        limit: 10000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Rows Written Overage
+        name: rows_written_overage
+        type: metered
+        metric: million rows
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '1.00'
+        userMultiplied: false
+      - label: Monthly Syncs
+        name: syncs_gb
+        type: quota
+        metric: GB
+        limit: 3
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Syncs Overage
+        name: syncs_overage
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.35'
+        userMultiplied: false
+      - label: Point-In-Time Restore
+        name: pitr_days
+        type: quota
+        metric: days
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+  - id: turso-developer
+    name: Developer
+    type: freemium
+    description: Unlimited databases for individual developers, with expanded storage, row quotas, audit logs, and compliance features.
+    entries:
+      - label: Monthly Price
+        name: monthly_price
+        type: boolean
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '4.99'
+        userMultiplied: false
+      - label: Databases
+        name: databases
+        type: quota
+        metric: databases
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage
+        name: storage_gb
+        type: quota
+        metric: GB
+        limit: 9
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage Overage
+        name: storage_overage
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.75'
+        userMultiplied: false
+      - label: Monthly Rows Read
+        name: rows_read
+        type: quota
+        metric: rows
+        limit: 2500000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Monthly Rows Written
+        name: rows_written
+        type: quota
+        metric: rows
+        limit: 25000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Monthly Syncs
+        name: syncs_gb
+        type: quota
+        metric: GB
+        limit: 10
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Point-In-Time Restore
+        name: pitr_days
+        type: quota
+        metric: days
+        limit: 10
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Audit Logs Retention
+        name: audit_logs_days
+        type: quota
+        metric: days
+        limit: 3
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+  - id: turso-scaler
+    name: Scaler
+    type: paid
+    description: For growing teams requiring expanded storage, higher row quotas, team collaboration, and 30-day point-in-time restore.
+    entries:
+      - label: Monthly Price
+        name: monthly_price
+        type: boolean
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '24.92'
+        userMultiplied: false
+      - label: Databases
+        name: databases
+        type: quota
+        metric: databases
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage
+        name: storage_gb
+        type: quota
+        metric: GB
+        limit: 24
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage Overage
+        name: storage_overage
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.50'
+        userMultiplied: false
+      - label: Monthly Rows Read
+        name: rows_read
+        type: quota
+        metric: rows
+        limit: 100000000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Monthly Rows Written
+        name: rows_written
+        type: quota
+        metric: rows
+        limit: 100000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Monthly Syncs
+        name: syncs_gb
+        type: quota
+        metric: GB
+        limit: 24
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Point-In-Time Restore
+        name: pitr_days
+        type: quota
+        metric: days
+        limit: 30
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Audit Logs Retention
+        name: audit_logs_days
+        type: quota
+        metric: days
+        limit: 14
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+  - id: turso-pro
+    name: Pro
+    type: paid
+    description: Production-grade plan with 50GB storage, 250B rows/month, 90-day PITR, SSO, BYOK encryption, HIPAA and SOC2 compliance, and priority support.
+    entries:
+      - label: Monthly Price
+        name: monthly_price
+        type: boolean
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '416.58'
+        userMultiplied: false
+      - label: Databases
+        name: databases
+        type: quota
+        metric: databases
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage
+        name: storage_gb
+        type: quota
+        metric: GB
+        limit: 50
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Storage Overage
+        name: storage_overage
+        type: metered
+        metric: GB
+        limit: -1
+        timeFrame: usage
+        geo: global
+        unit: 1
+        price: '0.45'
+        userMultiplied: false
+      - label: Monthly Rows Read
+        name: rows_read
+        type: quota
+        metric: rows
+        limit: 250000000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Monthly Rows Written
+        name: rows_written
+        type: quota
+        metric: rows
+        limit: 250000000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Monthly Syncs
+        name: syncs_gb
+        type: quota
+        metric: GB
+        limit: 100
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Point-In-Time Restore
+        name: pitr_days
+        type: quota
+        metric: days
+        limit: 90
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+      - label: Audit Logs Retention
+        name: audit_logs_days
+        type: quota
+        metric: days
+        limit: 30
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: '0.00'
+        userMultiplied: false
+  - id: turso-enterprise
+    name: Enterprise
+    type: enterprise
+    description: Custom pricing for production workloads with dedicated cloud, BYOC deployments, unlimited usage, 24x7 support, and custom SLAs.
+    entries:
+      - label: Monthly Price
+        name: monthly_price
+        type: boolean
+        metric: month
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'custom'
+        userMultiplied: false

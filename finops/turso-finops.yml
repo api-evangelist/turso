@@ -1,0 +1,65 @@
+---
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Turso
+providerId: turso
+created: '2026-06-12'
+modified: '2026-06-12'
+reconciled: true
+tags:
+  - FinOps
+  - FOCUS
+  - Database
+  - Edge Computing
+description: FOCUS-aligned FinOps for Turso Cloud edge database consumption tracking, covering storage, row operations, and sync transfer charges.
+sources:
+  - https://turso.tech/pricing
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Turso
+serviceCategory: Database
+billingModel:
+  pricingCategory: Subscription with usage-based overages
+  billingFrequency: Monthly
+  billingCurrency: USD
+focusColumns:
+  ServiceName: Turso Cloud
+  ServiceCategory: Database
+  ProviderName: Turso
+  PublisherName: Turso
+  BillingCurrency: USD
+meters:
+  - name: Storage
+    unit: GB
+    aggregation: max
+    description: Total database storage consumed across all databases in the organization.
+  - name: Rows Read
+    unit: rows
+    aggregation: sum
+    description: Total rows read from all database queries in the billing period.
+  - name: Rows Written
+    unit: rows
+    aggregation: sum
+    description: Total rows written across all database mutations in the billing period.
+  - name: Embedded Replica Syncs
+    unit: GB
+    aggregation: sum
+    description: Total data transferred during embedded replica sync operations.
+  - name: Base Plan Fee
+    unit: month
+    aggregation: sum
+    description: Fixed monthly subscription fee for the selected plan tier.
+principles:
+  - name: Visibility
+    description: Track Turso Cloud consumption monthly across storage, rows read, rows written, and sync transfer to identify cost drivers per organization and database.
+  - name: Optimization
+    description: Right-size the plan tier based on actual monthly row operation counts; monitor storage and overage charges to avoid unexpected bills on the free or developer tiers.
+  - name: Allocation
+    description: Attribute database costs to individual users or tenants by correlating per-database usage with multi-tenant provisioning patterns via the Platform API.
+  - name: Forecasting
+    description: Use historical row read/write growth trends to forecast when plan tier upgrades become more cost-effective than paying per-billion/million overages.
