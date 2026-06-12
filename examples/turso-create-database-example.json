@@ -1,0 +1,27 @@
+{
+  "description": "Example request/response for POST /v1/organizations/{organizationSlug}/databases",
+  "request": {
+    "method": "POST",
+    "url": "https://api.turso.tech/v1/organizations/my-org/databases",
+    "headers": {
+      "Authorization": "Bearer <token>",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "name": "my-new-db",
+      "group": "default",
+      "is_schema": false,
+      "seed": null
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "database": {
+        "Name": "my-new-db",
+        "DbId": "1fc881ee-7012-11ee-9a64-fbb8b25bcef3",
+        "Hostname": "my-new-db-my-org.turso.io"
+      }
+    }
+  }
+}

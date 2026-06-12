@@ -44,6 +44,8 @@ apis:
     properties:
       - type: Documentation
         url: https://docs.turso.tech/api-reference/introduction
+      - type: OpenAPI
+        url: openapi/turso-platform-api-openapi.yml
   - aid: turso:http-database-api
     name: Turso SQL over HTTP API
     description: >-
@@ -110,6 +112,14 @@ common:
     url: rate-limits/turso-rate-limits.yml
   - type: FinOps
     url: finops/turso-finops.yml
+  - type: Vocabulary
+    url: vocabulary/turso-vocabulary.yml
+  - type: JSONSchemas
+    url: json-schema/
+  - type: JSONLDContext
+    url: json-ld/turso-context.jsonld
+  - type: Examples
+    url: examples/
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

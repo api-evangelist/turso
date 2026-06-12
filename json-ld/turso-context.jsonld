@@ -1,0 +1,51 @@
+{
+  "@context": {
+    "@vocab": "https://api.turso.tech/vocab#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "Database": "https://api.turso.tech/vocab#Database",
+    "Name": { "@id": "schema:name" },
+    "DbId": { "@id": "schema:identifier" },
+    "Hostname": { "@id": "schema:url" },
+    "group": { "@id": "https://api.turso.tech/vocab#group" },
+    "primaryRegion": { "@id": "https://api.turso.tech/vocab#primaryRegion" },
+    "block_reads": { "@id": "https://api.turso.tech/vocab#blockReads", "@type": "xsd:boolean" },
+    "block_writes": { "@id": "https://api.turso.tech/vocab#blockWrites", "@type": "xsd:boolean" },
+    "delete_protection": { "@id": "https://api.turso.tech/vocab#deleteProtection", "@type": "xsd:boolean" },
+    "is_schema": { "@id": "https://api.turso.tech/vocab#isSchema", "@type": "xsd:boolean" },
+    "sleeping": { "@id": "https://api.turso.tech/vocab#sleeping", "@type": "xsd:boolean" },
+
+    "Organization": "https://api.turso.tech/vocab#Organization",
+    "slug": { "@id": "schema:identifier" },
+    "type": { "@id": "schema:additionalType" },
+    "overages": { "@id": "https://api.turso.tech/vocab#overages", "@type": "xsd:boolean" },
+    "require_mfa": { "@id": "https://api.turso.tech/vocab#requireMfa", "@type": "xsd:boolean" },
+    "plan_id": { "@id": "https://api.turso.tech/vocab#planId" },
+
+    "Group": "https://api.turso.tech/vocab#Group",
+    "locations": { "@id": "https://api.turso.tech/vocab#locations", "@container": "@set" },
+    "primary": { "@id": "https://api.turso.tech/vocab#primaryLocation" },
+    "archived": { "@id": "https://api.turso.tech/vocab#archived", "@type": "xsd:boolean" },
+
+    "Member": "https://api.turso.tech/vocab#Member",
+    "username": { "@id": "schema:identifier" },
+    "role": { "@id": "schema:roleName" },
+    "email": { "@id": "schema:email" },
+
+    "APIToken": "https://api.turso.tech/vocab#APIToken",
+    "id": { "@id": "schema:identifier" },
+    "organization": { "@id": "https://api.turso.tech/vocab#organization" },
+    "scopes": { "@id": "https://api.turso.tech/vocab#scopes", "@container": "@set" },
+    "created_at": { "@id": "schema:dateCreated", "@type": "xsd:date" },
+
+    "Instance": "https://api.turso.tech/vocab#Instance",
+    "region": { "@id": "https://api.turso.tech/vocab#region" },
+    "hostname": { "@id": "schema:url" },
+
+    "AuditLog": "https://api.turso.tech/vocab#AuditLog",
+    "action": { "@id": "schema:action" },
+    "author": { "@id": "schema:author" },
+    "created_at_ms": { "@id": "https://api.turso.tech/vocab#createdAtMs", "@type": "xsd:long" }
+  }
+}

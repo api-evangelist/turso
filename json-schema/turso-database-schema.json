@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.turso.tech/schemas/database.json",
+  "title": "Database",
+  "description": "A Turso Cloud database instance",
+  "type": "object",
+  "properties": {
+    "Name": {
+      "type": "string",
+      "description": "The database name, **unique** across your organization.",
+      "example": "my-db"
+    },
+    "DbId": {
+      "type": "string",
+      "description": "The database universal unique identifier (UUID).",
+      "example": "0eb771dd-6906-11ee-8553-eaa7715aeaf2"
+    },
+    "Hostname": {
+      "type": "string",
+      "description": "The DNS hostname used for client libSQL and HTTP connections.",
+      "example": "[databaseName]-[organizationSlug].turso.io"
+    },
+    "block_reads": {
+      "type": "boolean",
+      "description": "The current status for blocked reads.",
+      "example": false
+    },
+    "block_writes": {
+      "type": "boolean",
+      "description": "The current status for blocked writes.",
+      "example": false
+    },
+    "regions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "A list of regions for the group the database belongs to.",
+      "example": [
+        "aws-us-east-1"
+      ],
+      "deprecated": true
+    },
+    "primaryRegion": {
+      "type": "string",
+      "description": "The primary region location code the group the database belongs to.",
+      "example": "aws-us-east-1"
+    },
+    "group": {
+      "type": "string",
+      "description": "The name of the group the database belongs to.",
+      "example": "default"
+    },
+    "delete_protection": {
+      "type": "boolean",
+      "description": "The current status for delete protection. If enabled, the database cannot be deleted.",
+      "example": false
+    },
+    "parent": {
+      "type": "object",
+      "nullable": true,
+      "properties": {
+        "id": {
+          "type": "string",
+          "description": "The parent database identifier."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the parent database."
+        },
+        "branched_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "The timestamp when the database was branched from the parent.",
+          "example": "2025-04-15T13:14:34.468213117Z"
+        }
+      }
+    }
+  }
+}

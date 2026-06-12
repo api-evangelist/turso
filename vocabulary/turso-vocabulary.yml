@@ -1,0 +1,76 @@
+vocabulary:
+  name: Turso Platform API Vocabulary
+  description: >-
+    Key terms, concepts, and domain objects used throughout the Turso Platform API
+    and libSQL HTTP API for managing edge databases, organizations, groups, and tokens.
+  version: "1.0.0"
+  terms:
+    - name: Database
+      description: >-
+        A logical libSQL database instance hosted on Turso Cloud. Identified by a
+        unique name within an organization and accessed via a DNS hostname of the
+        form {databaseName}-{organizationSlug}.turso.io.
+    - name: Group
+      description: >-
+        A named collection of database replicas spread across one or more geographic
+        locations (regions). All databases within a group share the same replica topology
+        and can be updated together.
+    - name: Organization
+      description: >-
+        The top-level billing and access-control unit in Turso. Every user has a
+        personal organization; teams create named organizations to share resources
+        across multiple members.
+    - name: Member
+      description: >-
+        A user who belongs to an organization. Members are assigned roles (owner,
+        admin, member, viewer) that control their level of access to databases,
+        groups, and billing.
+    - name: API Token
+      description: >-
+        A long-lived bearer credential used to authenticate requests to the Turso
+        Platform API. Can be scoped to a specific organization or database group.
+    - name: Database Token
+      description: >-
+        A short-lived JWT credential generated for direct libSQL/HTTP access to a
+        specific database. Separate from API Tokens and scoped to read-only or
+        full-access permissions.
+    - name: Location
+      description: >-
+        A geographic deployment region supported by Turso (e.g., aws-us-east-1,
+        fly-lax). Databases in a group are replicated to one or more locations.
+    - name: Instance
+      description: >-
+        A physical replica of a database running in a specific location. A database
+        may have multiple instances, one per group location.
+    - name: libSQL
+      description: >-
+        An open-source fork of SQLite extended with replication, network access,
+        and concurrent writer support. The storage engine underlying all Turso databases.
+    - name: Pipeline
+      description: >-
+        The /v2/pipeline HTTP endpoint on a database instance for executing one or
+        more SQL statements in a single HTTP request. The primary query interface
+        for the Turso HTTP API.
+    - name: Schema Database
+      description: >-
+        A special multi-tenant database that acts as a shared schema template.
+        Child databases inherit its schema; migrations applied to the schema database
+        propagate automatically to all child databases.
+    - name: Audit Log
+      description: >-
+        An immutable record of a management action (create, delete, update) performed
+        on an organization resource via the Platform API. Used for compliance and
+        change tracking.
+    - name: Invite
+      description: >-
+        An email-based invitation sent to a prospective organization member before
+        they have a Turso account. Managed via the v2 invites endpoints.
+    - name: Subscription
+      description: >-
+        The active billing plan for an organization (free, starter, scaler, etc.),
+        including the current plan tier, quotas, and overages status.
+    - name: MCP Server
+      description: >-
+        A Model Context Protocol server (AgentFS) that exposes Turso databases and
+        key-value storage as tools callable by AI assistants such as Claude Desktop
+        and Cursor.

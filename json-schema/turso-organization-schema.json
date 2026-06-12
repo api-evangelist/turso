@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://api.turso.tech/schemas/organization.json",
+  "title": "Organization",
+  "description": "A Turso organization account",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The organization name. Every user has a `personal` organization for their own account.",
+      "example": "personal"
+    },
+    "slug": {
+      "type": "string",
+      "description": "The organization slug. This will be your username for `personal` accounts.",
+      "example": "iku"
+    },
+    "type": {
+      "type": "string",
+      "description": "The type of account this organization is. Will always be `personal` or `team`.",
+      "example": "personal",
+      "enum": [
+        "personal",
+        "team"
+      ]
+    },
+    "overages": {
+      "type": "boolean",
+      "description": "The name of the organization. Every user has a `personal` organization for their own account.",
+      "example": false
+    },
+    "require_mfa": {
+      "type": "boolean",
+      "description": "Whether all members of the organization are required to have multi-factor authentication enabled.",
+      "example": false
+    },
+    "blocked_reads": {
+      "type": "boolean",
+      "description": "Returns the current status for blocked reads.",
+      "example": false
+    },
+    "blocked_writes": {
+      "type": "boolean",
+      "description": "Returns the current status for blocked writes.",
+      "example": false
+    },
+    "plan_id": {
+      "type": "string",
+      "description": "The pricing plan identifier this organization is subscribed to.",
+      "example": "developer"
+    },
+    "plan_timeline": {
+      "type": "string",
+      "description": "The billing cycle for the paid plan, if any.",
+      "example": "monthly"
+    },
+    "platform": {
+      "type": "string",
+      "description": "The external platform this organization is managed by. Will be empty for Turso managed organizations.",
+      "example": "vercel"
+    }
+  }
+}

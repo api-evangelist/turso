@@ -1,0 +1,21 @@
+{
+  "description": "Example request/response for POST /v1/organizations/{organizationSlug}/databases/{databaseName}/auth/tokens",
+  "request": {
+    "method": "POST",
+    "url": "https://api.turso.tech/v1/organizations/my-org/databases/my-db/auth/tokens",
+    "headers": {
+      "Authorization": "Bearer <token>",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "expiration": "2w",
+      "authorization": "full-access"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "jwt": "eyJhbGciOiJFZERTQSIsInR5cCI6IkpXVCJ9.eyJhIjoicnciLCJpZCI6IjBlYjc3MWRkLTY5MDYtMTFlZS04NTUzLWVhYTc3MTVhZWFmMiJ9.abc123"
+    }
+  }
+}
