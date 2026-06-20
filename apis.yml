@@ -13,7 +13,7 @@ description: >-
   TypeScript, Go, Python, and mobile (iOS/Android), a CLI tool, and an MCP
   server integration for AI assistant access.
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Database
   - Edge Computing
