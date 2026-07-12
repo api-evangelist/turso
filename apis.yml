@@ -86,6 +86,12 @@ apis:
       - type: GitHubRepository
         url: https://github.com/tursodatabase/agentfs
 common:
+  - type: VulnerabilityDisclosure
+    url: security/turso-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/turso-domain-security.yml
+  - type: Authentication
+    url: authentication/turso-authentication.yml
   - type: Website
     url: https://turso.tech
   - type: Documentation
