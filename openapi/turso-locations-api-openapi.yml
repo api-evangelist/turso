@@ -1,0 +1,47 @@
+openapi: 3.0.1
+info:
+  title: Turso Platform Auth Locations API
+  description: API description here
+  license:
+    name: MIT
+  version: 0.1.0
+servers:
+- url: https://api.turso.tech
+  description: Turso's Platform API
+tags:
+- name: Locations
+paths:
+  /v1/locations:
+    get:
+      summary: List Locations
+      description: Returns a list of locations where you can create or replicate databases.
+      operationId: listLocations
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  locations:
+                    type: object
+                    additionalProperties:
+                      type: string
+                    description: A mapping of location codes to location names.
+                example:
+                  locations:
+                    aws-ap-northeast-1: AWS AP NorthEast (Tokyo)
+                    aws-ap-south-1: AWS AP South (Mumbai)
+                    aws-eu-west-1: AWS EU West (Ireland)
+                    aws-us-east-1: AWS US East (Virginia)
+                    aws-us-east-2: AWS US East (Ohio)
+                    aws-us-west-2: AWS US West (Oregon)
+      tags:
+      - Locations
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
