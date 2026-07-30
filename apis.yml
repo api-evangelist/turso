@@ -13,7 +13,20 @@ description: >-
   TypeScript, Go, Python, and mobile (iOS/Android), a CLI tool, and an MCP
   server integration for AI assistant access.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/turso.png
 tags:
   - Database
   - Edge Computing
@@ -26,65 +39,90 @@ created: '2026-06-12'
 modified: '2026-06-12'
 specificationVersion: '0.19'
 apis:
-  - aid: turso:platform-api
-    name: Turso Platform API
-    description: >-
-      RESTful management API for programmatically creating and managing Turso
-      Cloud databases, groups, organizations, locations, and scoped
-      authentication tokens. Used for building multi-tenant architectures,
-      automating database provisioning on user signup or agent creation, and
-      managing the full lifecycle of libSQL databases in the cloud.
-    humanURL: https://docs.turso.tech/api-reference/introduction
-    baseURL: https://api.turso.tech
-    tags:
-      - Database Management
-      - Organizations
-      - Tokens
-      - Groups
-    properties:
-      - type: Documentation
-        url: https://docs.turso.tech/api-reference/introduction
-      - type: OpenAPI
-        url: openapi/turso-platform-api-openapi.yml
-  - aid: turso:http-database-api
-    name: Turso SQL over HTTP API
-    description: >-
-      HTTP API for executing SQL statements directly against a Turso database
-      instance at the edge. Supports query execution via the /v2/pipeline
-      endpoint, health checks, server version retrieval, database dump export,
-      schema migration job monitoring, and real-time table change listening
-      (technical preview). Designed for edge and serverless environments where
-      WebSocket connections are unavailable.
-    humanURL: https://docs.turso.tech/sdk/http/reference
-    baseURL: https://{databaseName}-{organizationSlug}.turso.io
-    tags:
-      - SQL
-      - HTTP
-      - Edge
-      - Serverless
-    properties:
-      - type: Documentation
-        url: https://docs.turso.tech/sdk/http/reference
-      - type: Documentation
-        url: https://docs.turso.tech/sdk/http/quickstart
-  - aid: turso:agentfs-mcp
-    name: Turso AgentFS MCP Server
-    description: >-
-      Model Context Protocol (MCP) server that exposes Turso databases, filesystem
-      operations, and key-value storage to AI assistants such as Claude Desktop,
-      Cursor, and Windsurf. Enables AI agents to discover optimal regions,
-      monitor real-time table changes, and access structured database operations
-      in a secure, tool-limited fashion.
-    humanURL: https://docs.turso.tech/agentfs/guides/mcp
-    tags:
-      - MCP
-      - AI Agents
-      - Model Context Protocol
-    properties:
-      - type: Documentation
-        url: https://docs.turso.tech/agentfs/guides/mcp
-      - type: GitHubRepository
-        url: https://github.com/tursodatabase/agentfs
+- aid: turso:http-database-api
+  name: Turso SQL over HTTP API
+  description: >-
+    HTTP API for executing SQL statements directly against a Turso database instance at the edge. Supports
+    query execution via the /v2/pipeline endpoint, health checks, server version retrieval, database dump
+    export, schema migration job monitoring, and real-time table change listening (technical preview).
+    Designed for edge and serverless environments where WebSocket connections are unavailable.
+  humanURL: https://docs.turso.tech/sdk/http/reference
+  baseURL: https://{databaseName}-{organizationSlug}.turso.io
+  tags:
+  - SQL
+  - HTTP
+  - Edge
+  - Serverless
+  properties:
+  - type: Documentation
+    url: https://docs.turso.tech/sdk/http/reference
+  - type: Documentation
+    url: https://docs.turso.tech/sdk/http/quickstart
+- aid: turso:agentfs-mcp
+  name: Turso AgentFS MCP Server
+  description: >-
+    Model Context Protocol (MCP) server that exposes Turso databases, filesystem operations, and key-value
+    storage to AI assistants such as Claude Desktop, Cursor, and Windsurf. Enables AI agents to discover
+    optimal regions, monitor real-time table changes, and access structured database operations in a secure,
+    tool-limited fashion.
+  humanURL: https://docs.turso.tech/agentfs/guides/mcp
+  tags:
+  - MCP
+  - AI Agents
+  - Model Context Protocol
+  properties:
+  - type: Documentation
+    url: https://docs.turso.tech/agentfs/guides/mcp
+  - type: GitHubRepository
+    url: https://github.com/tursodatabase/agentfs
+- aid: turso:turso-auth-api
+  name: Turso Auth API
+  description: The Auth API from Turso — 3 operation(s) for auth.
+  humanURL: https://docs.turso.tech/api-reference/introduction
+  baseURL: https://api.turso.tech
+  tags:
+  - Auth
+  properties:
+  - type: OpenAPI
+    url: openapi/turso-auth-api-openapi.yml
+  - type: Documentation
+    url: https://docs.turso.tech/api-reference/introduction
+- aid: turso:turso-locations-api
+  name: Turso Locations API
+  description: The Locations API from Turso — 1 operation(s) for locations.
+  humanURL: https://docs.turso.tech/api-reference/introduction
+  baseURL: https://api.turso.tech
+  tags:
+  - Locations
+  properties:
+  - type: OpenAPI
+    url: openapi/turso-locations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.turso.tech/api-reference/introduction
+- aid: turso:turso-organizations-api
+  name: Turso Organizations API
+  description: The Organizations API from Turso — 31 operation(s) for organizations.
+  humanURL: https://docs.turso.tech/api-reference/introduction
+  baseURL: https://api.turso.tech
+  tags:
+  - Organizations
+  properties:
+  - type: OpenAPI
+    url: openapi/turso-organizations-api-openapi.yml
+  - type: Documentation
+    url: https://docs.turso.tech/api-reference/introduction
+- aid: turso:turso-user-api
+  name: Turso User API
+  description: The User API from Turso — 1 operation(s) for user.
+  humanURL: https://docs.turso.tech/api-reference/introduction
+  baseURL: https://api.turso.tech
+  tags:
+  - User
+  properties:
+  - type: OpenAPI
+    url: openapi/turso-user-api-openapi.yml
+  - type: Documentation
+    url: https://docs.turso.tech/api-reference/introduction
 common:
   - type: AgenticAccess
     url: agentic-access/turso-agentic-access.yml
