@@ -1,0 +1,20 @@
+{
+  "provider": "turso",
+  "sources": [
+    "turso-auth-api-openapi.yml",
+    "turso-locations-api-openapi.yml",
+    "turso-organizations-api-openapi.yml",
+    "turso-user-api-openapi.yml"
+  ],
+  "outputs": [
+    "turso-auth-api-openapi.yml",
+    "turso-locations-api-openapi.yml",
+    "turso-organizations-api-openapi.yml",
+    "turso-user-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
