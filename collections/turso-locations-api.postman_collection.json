@@ -1,0 +1,104 @@
+{
+  "item": [
+    {
+      "id": "c2ea1df1-0de3-4ee3-8e08-1837dc8f81bf",
+      "name": "Locations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4633d4a8-33e3-4795-81ac-4a6fdd613263",
+          "name": "List Locations",
+          "request": {
+            "name": "List Locations",
+            "description": {
+              "content": "Returns a list of locations where you can create or replicate databases.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "locations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "eefe4f7a-e001-42dd-a83d-45b219e1d693",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "locations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"locations\": {\n    \"aws-ap-northeast-1\": \"AWS AP NorthEast (Tokyo)\",\n    \"aws-ap-south-1\": \"AWS AP South (Mumbai)\",\n    \"aws-eu-west-1\": \"AWS EU West (Ireland)\",\n    \"aws-us-east-1\": \"AWS US East (Virginia)\",\n    \"aws-us-east-2\": \"AWS US East (Ohio)\",\n    \"aws-us-west-2\": \"AWS US West (Oregon)\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.turso.tech",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "6aaf7582-4909-4543-8ec7-8201289df37b",
+    "name": "Turso Platform Auth Locations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "API description here",
+      "type": "text/plain"
+    }
+  }
+}

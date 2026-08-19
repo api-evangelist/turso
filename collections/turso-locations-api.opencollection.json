@@ -1,0 +1,29 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Turso Platform Auth Locations API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Locations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/locations"
+          },
+          "docs": "Returns a list of locations where you can create or replicate databases."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

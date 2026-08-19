@@ -1,0 +1,1116 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Turso Platform Auth Organizations API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Databases",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "group",
+                "value": "",
+                "type": "query",
+                "description": "Filter databases by group name."
+              },
+              {
+                "name": "schema",
+                "value": "",
+                "type": "query",
+                "description": "The schema database name that can be used to get databases that belong to that parent schema."
+              },
+              {
+                "name": "parent",
+                "value": "",
+                "type": "query",
+                "description": "Filter database branches by using their parent database ID."
+              }
+            ]
+          },
+          "docs": "Returns a list of databases belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Create Database",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new database in a group for the organization or user."
+        },
+        {
+          "info": {
+            "name": "Retrieve Database",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              }
+            ]
+          },
+          "docs": "Returns a database belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Delete Database",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              }
+            ]
+          },
+          "docs": "Delete a database belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Retrieve Database Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/configuration",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              }
+            ]
+          },
+          "docs": "Retrieve an individual database configuration belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Update Database Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/configuration",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a database configuration belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "List Database Instances",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/instances",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              }
+            ]
+          },
+          "docs": "Returns a list of instances of a database. Instances are the individual primary or replica databases in each region defined by the group."
+        },
+        {
+          "info": {
+            "name": "Retrieve Database Instance",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/instances/:instanceName",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              },
+              {
+                "name": "instanceName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the instance (location code)."
+              }
+            ]
+          },
+          "docs": "Return the individual database instance by name."
+        },
+        {
+          "info": {
+            "name": "Generate Database Auth Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/auth/tokens",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              },
+              {
+                "name": "expiration",
+                "value": "",
+                "type": "query",
+                "description": "Expiration time for the token (e.g., 2w1d30m)."
+              },
+              {
+                "name": "authorization",
+                "value": "",
+                "type": "query",
+                "description": "Authorization level for the token (full-access or read-only)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates an authorization token for the specified database."
+        },
+        {
+          "info": {
+            "name": "Retrieve Database Usage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/usage",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              },
+              {
+                "name": "from",
+                "value": "",
+                "type": "query",
+                "description": "The datetime to retrieve usage **from** in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Defaults to the current calendar month if not provided. Example: `2023-01-01T00:00:00Z`"
+              },
+              {
+                "name": "to",
+                "value": "",
+                "type": "query",
+                "description": "The datetime to retrieve usage **to** in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. Defaults to the current calendar month if not provided. Example: `2023-02-01T00:00:00Z`"
+              }
+            ]
+          },
+          "docs": "Fetch activity usage for a database in a given time period."
+        },
+        {
+          "info": {
+            "name": "Retrieve Database Stats",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/stats",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              }
+            ]
+          },
+          "docs": "Fetch the top queries of a database, including the count of rows read and written."
+        },
+        {
+          "info": {
+            "name": "Invalidate All Database Auth Tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/databases/:databaseName/auth/rotate",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "databaseName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the database."
+              }
+            ]
+          },
+          "docs": "Invalidates all authorization tokens for the specified database."
+        },
+        {
+          "info": {
+            "name": "List Groups",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Returns a list of groups belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Create Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new group for the organization or user."
+        },
+        {
+          "info": {
+            "name": "Retrieve Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ]
+          },
+          "docs": "Returns a group belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Delete Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ]
+          },
+          "docs": "Delete a group belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Retrieve Group Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/configuration",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ]
+          },
+          "docs": "Retrieve an individual group configuration belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Update Group Configuration",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/configuration",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update a group configuration belonging to the organization or user."
+        },
+        {
+          "info": {
+            "name": "Transfer Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/transfer",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Transfer a group to another organization that you own or a member of."
+        },
+        {
+          "info": {
+            "name": "Unarchive Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/unarchive",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ]
+          },
+          "docs": "Unarchive a group that has been archived due to inactivity."
+        },
+        {
+          "info": {
+            "name": "Add Location to Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/locations/:location",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              },
+              {
+                "name": "location",
+                "value": "aws-us-east-1",
+                "type": "path",
+                "description": "The location code to add to the group."
+              }
+            ]
+          },
+          "docs": "Adds a location to the specified group."
+        },
+        {
+          "info": {
+            "name": "Remove Location from Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/locations/:location",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "path",
+                "description": "The location code to remove from the group."
+              }
+            ]
+          },
+          "docs": "Removes a location from the specified group."
+        },
+        {
+          "info": {
+            "name": "Update Databases in a Group",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/update",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ]
+          },
+          "docs": "Updates all databases in the group to the latest libSQL version."
+        },
+        {
+          "info": {
+            "name": "Create Group Auth Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/auth/tokens",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              },
+              {
+                "name": "expiration",
+                "value": "",
+                "type": "query",
+                "description": "Expiration time for the token (e.g., 2w1d30m)."
+              },
+              {
+                "name": "authorization",
+                "value": "",
+                "type": "query",
+                "description": "Authorization level for the token (full-access or read-only)."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Generates an authorization token for the specified group."
+        },
+        {
+          "info": {
+            "name": "Invalidate All Group Auth Tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/groups/:groupName/auth/rotate",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "groupName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the group."
+              }
+            ]
+          },
+          "docs": "Invalidates all authorization tokens for the specified group."
+        },
+        {
+          "info": {
+            "name": "List Organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations"
+          },
+          "docs": "Returns a list of organizations the authenticated user owns or is a member of."
+        },
+        {
+          "info": {
+            "name": "Retrieve Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific organization."
+        },
+        {
+          "info": {
+            "name": "Update Organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update an organization you own or are a member of."
+        },
+        {
+          "info": {
+            "name": "List Plans",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/plans",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Returns a list of available plans and their quotas."
+        },
+        {
+          "info": {
+            "name": "List Invoices",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/invoices",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "The type of invoice to retrieve."
+              }
+            ]
+          },
+          "docs": "Returns a list of invoices for the organization."
+        },
+        {
+          "info": {
+            "name": "Current Subscription",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/subscription",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Returns the current subscription details for the organization."
+        },
+        {
+          "info": {
+            "name": "Organization Usage",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/usage",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Fetch current billing cycle usage for an organization."
+        },
+        {
+          "info": {
+            "name": "List Members",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/members",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Returns a list of members part of the organization."
+        },
+        {
+          "info": {
+            "name": "Add Member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/members",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Add an existing Turso user to an organization."
+        },
+        {
+          "info": {
+            "name": "Retrieve Member",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/members/:username",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "The username of a Turso user or organization member."
+              }
+            ]
+          },
+          "docs": "Retrieve details of a specific member in the organization."
+        },
+        {
+          "info": {
+            "name": "Update Member Role",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/members/:username",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "The username of a Turso user or organization member."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Update the role of an organization member. Only organization admins or owners can perform this action."
+        },
+        {
+          "info": {
+            "name": "Remove Member",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/members/:username",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "username",
+                "value": "",
+                "type": "path",
+                "description": "The username of a Turso user or organization member."
+              }
+            ]
+          },
+          "docs": "Remove a user from the organization by username."
+        },
+        {
+          "info": {
+            "name": "List Organization API Tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/api-tokens",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Returns the API tokens scoped to this organization (both organization-scoped and group-scoped). Unrestricted tokens are not returned here — manage those via [`GET /v1/auth/api-tokens`](/api-reference/tokens/list).\n\nAuthorization is symmetric with the revoke endpoint:\n\n- **Admins and owners** see every token scoped to the organization, with the minting user attached in the `owner` field.\n- **Members and viewers** see only tokens they minted themselves.\n\nThis mirrors the personal-access-token mode"
+        },
+        {
+          "info": {
+            "name": "Revoke Organization API Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/api-tokens/:tokenId",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "tokenId",
+                "value": "clGFZ4STEe6fljpFzIum8A",
+                "type": "path",
+                "description": "The ID of the token to revoke (from the list endpoint)."
+              }
+            ]
+          },
+          "docs": "Revokes a token scoped to this organization.\n\nThe path takes a token **ID**, not a name, because names are unique per user but not across users — an admin revoking a member's token can't disambiguate by name alone.\n\nAuthorization is symmetric with the list endpoint:\n\n- **Admins and owners** can revoke any token scoped to the organization (org-scoped or group-scoped, regardless of who minted it).\n- **Members and viewers** can revoke only tokens they minted themselves.\n\nA token scoped to a differe"
+        },
+        {
+          "info": {
+            "name": "List Audit Logs",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/organizations/:organizationSlug/audit-logs",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "page_size",
+                "value": "",
+                "type": "query",
+                "description": "The limit of items to return per page. Defaults to 100."
+              },
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "The page number to return. Defaults to 1."
+              }
+            ]
+          },
+          "docs": "Return the audit logs for the given organization, ordered by the `created_at` field in descending order."
+        },
+        {
+          "info": {
+            "name": "List Invites",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v2/organizations/:organizationSlug/invites",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ]
+          },
+          "docs": "Returns a list of pending invites for the organization."
+        },
+        {
+          "info": {
+            "name": "Invite Organization Member",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v2/organizations/:organizationSlug/invites",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Invite a user to an organization. If the user isn't already registered with Turso, they will receive a signup link. If an existing pending invite exists for the same email, it will be replaced."
+        },
+        {
+          "info": {
+            "name": "Delete Invite",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.turso.tech/v2/organizations/:organizationSlug/invites/:email",
+            "params": [
+              {
+                "name": "organizationSlug",
+                "value": "",
+                "type": "path",
+                "description": "The slug of the organization or user account."
+              },
+              {
+                "name": "email",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Delete a pending invite for the organization by email."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,82 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Turso Platform Auth API",
+    "version": "0.1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Auth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Validate API Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/auth/validate"
+          },
+          "docs": "Validates an API token belonging to a user."
+        },
+        {
+          "info": {
+            "name": "List API Tokens",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.turso.tech/v1/auth/api-tokens"
+          },
+          "docs": "Returns a list of API tokens belonging to a user."
+        },
+        {
+          "info": {
+            "name": "Create API Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.turso.tech/v1/auth/api-tokens/:tokenName",
+            "params": [
+              {
+                "name": "tokenName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the api token."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns a new API token belonging to a user.\n\nThe token can be minted at three levels of restriction, in increasing order of narrowness:\n\n- **Organization-scoped** — pass `organization`. The token can only act on resources inside that organization.\n- **Group-scoped** — pass `organization`, `group`, and `scopes`. The token is pinned to a single group inside the organization and only the operations listed in `scopes` are allowed. The caller must be an admin or owner of the organization.\n- **Unrest"
+        },
+        {
+          "info": {
+            "name": "Revoke API Token",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://api.turso.tech/v1/auth/api-tokens/:tokenName",
+            "params": [
+              {
+                "name": "tokenName",
+                "value": "",
+                "type": "path",
+                "description": "The name of the api token."
+              }
+            ]
+          },
+          "docs": "Revokes the provided API token belonging to a user."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
