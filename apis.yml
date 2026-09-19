@@ -118,6 +118,8 @@ apis:
   humanURL: https://docs.turso.tech/api-reference/introduction
   baseURL: https://api.turso.tech
   tags:
+  - Location
+  tags_raw:
   - Locations
   properties:
   - type: OpenAPI
