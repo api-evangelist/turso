@@ -1,6 +1,6 @@
-openapi: 3.0.1
+openapi: 3.2.0
 info:
-  title: Turso Platform Auth User API
+  title: Turso Platform User API
   description: API description here
   license:
     name: MIT
