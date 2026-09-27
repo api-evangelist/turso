@@ -143,14 +143,6 @@ paths:
       tags:
       - Auth
 components:
-  parameters:
-    tokenName:
-      name: tokenName
-      in: path
-      required: true
-      schema:
-        type: string
-      description: The name of the api token.
   schemas:
     APIToken:
       type: object
@@ -184,6 +176,14 @@ components:
           type: string
           description: The date the token was created, in `YYYY-MM-DD` format.
           example: '2026-05-21'
+  parameters:
+    tokenName:
+      name: tokenName
+      in: path
+      required: true
+      schema:
+        type: string
+      description: The name of the api token.
   securitySchemes:
     bearerAuth:
       type: http
