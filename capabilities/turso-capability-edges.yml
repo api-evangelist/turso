@@ -1,0 +1,35 @@
+slug: turso
+provider: Turso
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Auth
+  spec_file: turso-auth-api-openapi.yml
+  capability_id: BC-4270.40
+  capability_id_l1: BC-4270
+  capability_name: Developer Identity & Credential Management
+  confidence: 0.78
+  evidence: createAPIToken  Create API Token; revokeAPIToken  Revoke API Token; validateAPIToken  Validate
+    API Token; schema APIToken
+  reason: Issuance, validation and revocation of platform API tokens for developers is developer credential
+    management on a developer platform.
+- tag: Organizations
+  spec_file: turso-organizations-api-openapi.yml
+  capability_id: BC-600.50
+  capability_id_l1: BC-600
+  capability_name: IT Infrastructure Management
+  confidence: 0.7
+  evidence: POST /v1/organizations/{organizationSlug}/databases  createDatabase  Create Database; GET
+    .../databases/{databaseName}/instances  listDatabaseInstances; .../usage  getDatabaseUsage
+  reason: Despite the Organizations tag, the operations provision and configure cloud database instances,
+    groups and usage — cloud infrastructure provisioning and management.
