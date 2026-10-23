@@ -156,6 +156,8 @@ apis:
   - type: Documentation
     url: https://docs.turso.tech/api-reference/introduction
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/turso/overview
   - type: CapabilityMap
     url: capabilities/turso-capability-edges.yml
     name: Turso Business Capability Map
