@@ -1,104 +1,108 @@
 {
+  "info": {
+    "_postman_id": "28b1a45b-fa8b-4d96-b91e-7793ef4b9a55",
+    "name": "Turso Platform Locations API",
+    "description": "API description here",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:44:55.000Z",
+    "updatedAt": "2026-10-22T01:44:56.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-28b1a45b-fa8b-4d96-b91e-7793ef4b9a55"
+  },
   "item": [
     {
-      "id": "c2ea1df1-0de3-4ee3-8e08-1837dc8f81bf",
-      "name": "Locations",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "v1",
       "item": [
         {
-          "id": "4633d4a8-33e3-4795-81ac-4a6fdd613263",
-          "name": "List Locations",
-          "request": {
-            "name": "List Locations",
-            "description": {
-              "content": "Returns a list of locations where you can create or replicate databases.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "v1",
-                "locations"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "locations",
+          "item": [
             {
-              "id": "eefe4f7a-e001-42dd-a83d-45b219e1d693",
-              "name": "Successful response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "v1",
-                    "locations"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+              "name": "List Locations",
+              "id": "4186332e-1337-4012-a7f7-f847b97e5813",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
                 "header": [
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/v1/locations",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "locations"
+                  ]
+                },
+                "description": "Returns a list of locations where you can create or replicate databases."
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "99a46cf2-3619-4c92-9c7d-e3dfa7f4f234",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/locations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "locations"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"locations\": {\n    \"laboree\": \"<string>\",\n    \"cillum_1f\": \"<string>\"\n  }\n}",
+                  "createdAt": "2026-10-22T01:44:56.000Z",
+                  "updatedAt": "2026-10-22T01:44:56.000Z",
+                  "uid": "35240-99a46cf2-3619-4c92-9c7d-e3dfa7f4f234"
                 }
               ],
-              "body": "{\n  \"locations\": {\n    \"aws-ap-northeast-1\": \"AWS AP NorthEast (Tokyo)\",\n    \"aws-ap-south-1\": \"AWS AP South (Mumbai)\",\n    \"aws-eu-west-1\": \"AWS EU West (Ireland)\",\n    \"aws-us-east-1\": \"AWS US East (Virginia)\",\n    \"aws-us-east-2\": \"AWS US East (Ohio)\",\n    \"aws-us-west-2\": \"AWS US West (Oregon)\"\n  }\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T01:44:56.000Z",
+              "updatedAt": "2026-10-22T01:44:56.000Z",
+              "uid": "35240-4186332e-1337-4012-a7f7-f847b97e5813"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "2477e257-1f7d-434e-8c99-e1dcbdd819a8",
+          "createdAt": "2026-10-22T01:44:56.000Z",
+          "updatedAt": "2026-10-22T01:44:56.000Z",
+          "uid": "35240-2477e257-1f7d-434e-8c99-e1dcbdd819a8"
         }
       ],
-      "event": []
+      "id": "32903204-0510-4d97-aed4-686c8470bcc6",
+      "createdAt": "2026-10-22T01:44:56.000Z",
+      "updatedAt": "2026-10-22T01:44:56.000Z",
+      "uid": "35240-32903204-0510-4d97-aed4-686c8470bcc6"
     }
   ],
-  "event": [],
   "variable": [
     {
-      "type": "string",
-      "value": "https://api.turso.tech",
-      "key": "baseUrl"
+      "key": "baseUrl",
+      "value": "https://api.turso.tech"
     }
-  ],
-  "info": {
-    "_postman_id": "6aaf7582-4909-4543-8ec7-8201289df37b",
-    "name": "Turso Platform Auth Locations API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "API description here",
-      "type": "text/plain"
-    }
-  }
+  ]
 }

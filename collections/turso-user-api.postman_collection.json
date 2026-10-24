@@ -1,104 +1,108 @@
 {
+  "info": {
+    "_postman_id": "8b2eb9b9-2f14-4886-b908-c8db86d78387",
+    "name": "Turso Platform User API",
+    "description": "API description here",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-10-22T01:45:09.000Z",
+    "updatedAt": "2026-10-22T01:45:09.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-8b2eb9b9-2f14-4886-b908-c8db86d78387"
+  },
   "item": [
     {
-      "id": "a4c6845c-61e3-4a4e-b659-50354064bbbc",
-      "name": "User",
-      "description": {
-        "content": "",
-        "type": "text/plain"
-      },
+      "name": "v1",
       "item": [
         {
-          "id": "5a154062-9a67-4fa2-8a3e-c9f9144a1c3d",
-          "name": "Get Current User",
-          "request": {
-            "name": "Get Current User",
-            "description": {
-              "content": "Returns information about the currently authenticated user.",
-              "type": "text/plain"
-            },
-            "url": {
-              "path": [
-                "v1",
-                "user"
-              ],
-              "host": [
-                "{{baseUrl}}"
-              ],
-              "query": [],
-              "variable": []
-            },
-            "header": [
-              {
-                "key": "Accept",
-                "value": "application/json"
-              }
-            ],
-            "method": "GET",
-            "auth": null
-          },
-          "response": [
+          "name": "user",
+          "item": [
             {
-              "id": "7807733b-ed2f-42b6-9125-193c700253cc",
-              "name": "Successful response",
-              "originalRequest": {
-                "url": {
-                  "path": [
-                    "v1",
-                    "user"
-                  ],
-                  "host": [
-                    "{{baseUrl}}"
-                  ],
-                  "query": [],
-                  "variable": []
-                },
+              "name": "Get Current User",
+              "id": "5082bb1a-ffc5-4f86-bbc4-29694ea38751",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
                 "header": [
                   {
                     "key": "Accept",
                     "value": "application/json"
                   }
                 ],
-                "method": "GET",
-                "body": {}
+                "url": {
+                  "raw": "{{baseUrl}}/v1/user",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "v1",
+                    "user"
+                  ]
+                },
+                "description": "Returns information about the currently authenticated user."
               },
-              "status": "OK",
-              "code": 200,
-              "header": [
+              "response": [
                 {
-                  "key": "Content-Type",
-                  "value": "application/json"
+                  "id": "0068655e-4e41-4e66-900e-18782cf8d0ec",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/v1/user",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "v1",
+                        "user"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"user\": {\n    \"username\": \"<string>\",\n    \"name\": \"<string>\",\n    \"email\": \"<string>\",\n    \"avatarUrl\": \"<string>\",\n    \"plan\": \"<string>\",\n    \"mfa\": \"<boolean>\",\n    \"has_pending_invites\": \"<boolean>\"\n  }\n}",
+                  "createdAt": "2026-10-22T01:45:09.000Z",
+                  "updatedAt": "2026-10-22T01:45:09.000Z",
+                  "uid": "35240-0068655e-4e41-4e66-900e-18782cf8d0ec"
                 }
               ],
-              "body": "{\n  \"user\": {\n    \"username\": \"iku\",\n    \"name\": \"Iku Turso\",\n    \"email\": \"iku@turso.tech\",\n    \"avatarUrl\": \"https://avatars.githubusercontent.com/u/12345\",\n    \"plan\": \"scaler\",\n    \"mfa\": false,\n    \"has_pending_invites\": false\n  }\n}",
-              "cookie": [],
-              "_postman_previewlanguage": "json"
+              "createdAt": "2026-10-22T01:45:09.000Z",
+              "updatedAt": "2026-10-22T01:45:09.000Z",
+              "uid": "35240-5082bb1a-ffc5-4f86-bbc4-29694ea38751"
             }
           ],
-          "event": [],
-          "protocolProfileBehavior": {
-            "disableBodyPruning": true
-          }
+          "id": "669c3690-7cb1-4d5e-ac08-070dbb423ae3",
+          "createdAt": "2026-10-22T01:45:09.000Z",
+          "updatedAt": "2026-10-22T01:45:09.000Z",
+          "uid": "35240-669c3690-7cb1-4d5e-ac08-070dbb423ae3"
         }
       ],
-      "event": []
+      "id": "0086aadf-5171-4b79-b3a8-2c79450eb481",
+      "createdAt": "2026-10-22T01:45:09.000Z",
+      "updatedAt": "2026-10-22T01:45:09.000Z",
+      "uid": "35240-0086aadf-5171-4b79-b3a8-2c79450eb481"
     }
   ],
-  "event": [],
   "variable": [
     {
-      "type": "string",
-      "value": "https://api.turso.tech",
-      "key": "baseUrl"
+      "key": "baseUrl",
+      "value": "https://api.turso.tech"
     }
-  ],
-  "info": {
-    "_postman_id": "86092321-f96c-4b33-a884-aa0fd0c09241",
-    "name": "Turso Platform Auth User API",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "description": {
-      "content": "API description here",
-      "type": "text/plain"
-    }
-  }
+  ]
 }
